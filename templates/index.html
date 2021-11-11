@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Site</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+	    <p>Welcome!</p>
+	    <a href="{% url 'logout' %}" title="">Logout</a>
+	{% else %}
+	    <p>You're not logged in</p>
+	    <p>Please login or singup</p>
+	    <a href="{% url 'signup' %}" title="">Signup</a>
+	    <a href="{% url 'login' %}" title="">Login</a>
+	{% endif %}
+</body>
+</html>
